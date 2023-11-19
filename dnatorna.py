@@ -4,7 +4,3 @@ def dna_to_rna(dna):
 
 print(dna_to_rna("TTTT"))
 
-a = [1,2,3,4]
-b= [ 2*x for x in a]
-
-print(b )
