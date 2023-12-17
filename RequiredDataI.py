@@ -21,13 +21,16 @@ def count_sel(lst):
     result = []
     result.append(len(lst))
     result.append(len(set(lst)))
-    result.append(len([x for x in lst if lst.count(x) == 1 ]))
-    result.append(([x for x in lst if lst.count(x) > 2 ]))
+    result.append(len([x for x in lst if lst.count(x) == 1]))
+    result.append(list(set([x for x in lst if lst.count(x) > 2])))
+
 
     return result
-   
- 
 
 
-print(count_sel([-3, -2, -1, 3, 4, -5, -5, 5, -1, -5]))
+print(count_sel([-3, -2, -1, 3, 4, 4, 4, -5, -5, 5, -1, -5]))
 
+
+
+
+lisa = [-3, -2, -1, 3, 4, -5, -5, 5, -1, -5]
