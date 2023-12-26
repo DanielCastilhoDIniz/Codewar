@@ -21,26 +21,28 @@ longest word = ["VAMPED", "VALVED", "PALMED"]
 # ('TDWAYZROE', ['TODAY', 'TOWER', 'TRADE', 'WATER'])
 
 
-def longest_word(letters):
-    pass
-
-
 letters = "TDWAYZROE"
 words = ['TOWER', 'TODAY',  'TRADE', 'WATER', 'WAR']
-response = []
 
 
-for word in words:
-    for letter in word:
-        if letter in letters and word not in response:
-            response.append(word)
-            
-print(sorted(response))
-print(max(response))
+def longest_word(letters):
+    return [word for word in words if len(word) == len(max(words, key=len)) and all(letter in letters and word.count(letter) <= letters.count(letter) for letter in set(letters))]
 
-# for word in words:
-#     for letter in word:
-#         print(letter.split())
-dic_words ={'TOWER':5, 'TODAY':5,  'TRADE':5, 'WATER':5, 'WAR':3}
 
-print(dic_words.values())
+def longest_word1(letters):
+    return [word for word in words if len(word) == len(max(words, key=len)) and all(letter in letters for letter in word)]
+
+
+print(longest_word(letters))
+print(longest_word1(letters))
+
+
+def longest_word2(letters):
+    unscrambled = []
+    for word in words:
+        if set(word).issubset(set(letters)) and all(word.count(l) <= letters.count(l) for l in set(letters)):
+            unscrambled.append(word)
+    return [x for x in unscrambled if len(x) == max(map(len, unscrambled))] or None
+
+
+print(longest_word2(letters))
