@@ -46,3 +46,16 @@ def longest_word2(letters):
 
 
 print(longest_word2(letters))
+
+
+def longest_word3(l):
+    c = []
+    for i in sorted(words,key=len)[::-1]:
+        if all(l.count(j)>=i.count(j) for j in i):
+            c+=[i]
+    if not c:
+        return None
+    m = len(c[0])
+    return sorted([i for i in c if len(i)==m])
+
+print(longest_word3(letters))
