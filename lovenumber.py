@@ -25,7 +25,3 @@ elif (score_number < 10) or (score_number > 90):
     print(f"Your score is {score}, you go together like coke and mentos.")
 else:
      print(f"Your score is {score}.")
-
-
-
-
