@@ -9,7 +9,7 @@
 #         if i < low:
 #             low = i
 #     return f"{high} {low}"
-
+""" maior e menor inteiro de uma lista"""
 def high_and_low(numbers):
 
     aux = [int(x) for x in numbers.split()]
